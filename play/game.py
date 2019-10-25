@@ -28,8 +28,14 @@ class GameService:
         " " "
         for player in self.players:
             while new_bid<300:
-                int(input("You can bid greater than ",new_bid))
-                self.players=filter(lambda bid:(bid!=0), self.players)
+                try:
+                    int(input("You can bid greater than ",new_bid))
+                    if new_bid<0:
+                        raise valueError("Error: Please enter a positive number")
+                    self.players=filter(lambda bid:(bid!=0), self.players)
+                except ValueError:
+                    print(ValueError)
+                
                     
      
         
