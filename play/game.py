@@ -22,4 +22,11 @@ class GameService:
             for player in self.players:
                 player.deal_card(self.deck.cards.pop())
 
-
+    def start_bidding(self,bid=150):
+        for player in self.players:
+            while bid<300:
+                print("You can bid greater than ",bid)
+                if bid.is_valid():
+                    
+     
+        
