@@ -23,9 +23,13 @@ class GameService:
                 player.deal_card(self.deck.cards.pop())
 
     def start_bidding(self,bid=150):
+        " " "
+        Picks the highest bidder from Players
+        " " "
         for player in self.players:
             while bid<300:
                 print("You can bid greater than ",bid)
+                bid=player.start_bid(request.bid or None)
                 if bid.is_valid():
                     
      
