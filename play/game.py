@@ -22,4 +22,20 @@ class GameService:
             for player in self.players:
                 player.deal_card(self.deck.cards.pop())
 
-
+    def start_bidding(self,new_bid=150):
+        " " "
+        Picks the highest bidder from Players
+        " " "
+        for player in self.players:
+            while new_bid<300:
+                try:
+                    int(input("You can bid greater than ",new_bid))
+                    if new_bid<0:
+                        raise valueError("Error: Please enter a positive number")
+                    self.players=filter(lambda bid:(bid!=0), self.players)
+                except ValueError:
+                    print(ValueError)
+                
+                    
+     
+        
